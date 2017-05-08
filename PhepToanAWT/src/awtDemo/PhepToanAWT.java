@@ -76,8 +76,15 @@ public class PhepToanAWT extends Frame implements ActionListener,WindowListener{
 		}
 		else if(e.getSource()==btnChia)
 		{
-			tempKq = tempA / tempB;
-			txtKq.setText(tempKq+"");
+			if(tempB == 0)
+			{
+				txtKq.setText("Error");
+			}
+			else
+			{
+				tempKq = tempA / tempB;
+				txtKq.setText(tempKq+"");
+			}
 		}
 	}
 	@Override
