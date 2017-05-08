@@ -12,10 +12,10 @@ public class PhepToanAWT extends Frame implements ActionListener,WindowListener{
 	private Button btnChia;
 	private double ketQua;
 	// get set cho ketQua
-	private double getKetQua() {
+	public double getKetQua() {
 		return ketQua;
 	}
-	private void setKetQua(double ketQua) {
+	public void setKetQua(double ketQua) {
 		this.ketQua = ketQua;
 	}
 	
