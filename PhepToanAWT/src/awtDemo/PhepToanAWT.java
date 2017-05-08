@@ -11,9 +11,16 @@ public class PhepToanAWT extends Frame implements ActionListener,WindowListener{
 	private Button btnNhan;
 	private Button btnChia;
 	private double ketQua;
+	// get set cho ketQua
+	private double getKetQua() {
+		return ketQua;
+	}
+	private void setKetQua(double ketQua) {
+		this.ketQua = ketQua;
+	}
+	
 	public PhepToanAWT() {
-		
-		ketQua = 0;
+		setKetQua(0);
 		setLayout(new FlowLayout());
 		
 		add(new Label("a = "));
@@ -56,23 +63,22 @@ public class PhepToanAWT extends Frame implements ActionListener,WindowListener{
 		// TODO Auto-generated method stub
 		double tempA = 0;
 		double tempB = 0;
-		double tempKq =0;
 		tempA = Double.parseDouble(txtA.getText());
 		tempB = Double.parseDouble(txtB.getText());
 		if(e.getSource()==btnCong)
 		{
-			 tempKq = tempA + tempB;
-			txtKq.setText(tempKq+"");
+			setKetQua(tempA + tempB);
+			txtKq.setText(getKetQua()+"");
 		}
 		else if(e.getSource()==btnTru)
 		{
-			tempKq = tempA - tempB;
-			txtKq.setText(tempKq+"");
+			setKetQua(tempA - tempB);
+			txtKq.setText(getKetQua()+"");
 		}
 		else if(e.getSource()==btnNhan)
 		{
-			tempKq = tempA * tempB;
-			txtKq.setText(tempKq+"");
+			setKetQua(tempA * tempB);
+			txtKq.setText(getKetQua()+"");
 		}
 		else if(e.getSource()==btnChia)
 		{
@@ -82,8 +88,8 @@ public class PhepToanAWT extends Frame implements ActionListener,WindowListener{
 			}
 			else
 			{
-				tempKq = tempA / tempB;
-				txtKq.setText(tempKq+"");
+				setKetQua(tempA / tempB);
+				txtKq.setText(getKetQua()+"");
 			}
 		}
 	}
@@ -122,4 +128,5 @@ public class PhepToanAWT extends Frame implements ActionListener,WindowListener{
 		// TODO Auto-generated method stub
 		
 	}
+
 }
